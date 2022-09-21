@@ -24,50 +24,28 @@ bot.command('start', async (ctx) => {
     })
 });
 
-
 const chars = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+function randomPassword(passLength) {
+    var password = '';
+    for (var i = 0; i <= passLength; i++) {
+        const randomNumber = Math.floor(Math.random() * chars.length);
+        password += chars.substring(randomNumber, randomNumber +1);
+    }
+    return password
+};
 
 bot.on('message:text', async (ctx) => {
 
     if (ctx.message.text == '🔓Створіть простий пароль') {
-
-        var passwordLength = 5;
-        var password = "";
-        
-        for (var i = 0; i <= passwordLength; i++) {
-            var randomNumber = Math.floor(Math.random() * chars.length);
-            password += chars.substring(randomNumber, randomNumber +1);
-        }
-
-        await ctx.reply('Твій пароль: ' + password)
-
+        await ctx.reply(`Твій пароль: ${randomPassword(5)}`)
     } else if (ctx.message.text == '🔒Створіть середній пароль') {
-
-        var passwordLength = 8;
-        var password = "";
-        
-        for (var i = 0; i <= passwordLength; i++) {
-            var randomNumber = Math.floor(Math.random() * chars.length);
-            password += chars.substring(randomNumber, randomNumber +1);
-        }
-
-        await ctx.reply('Твій пароль: ' + password)
-        
+        await ctx.reply(`Твій пароль: ${randomPassword(8)}`)
     } else if (ctx.message.text == '🔐Створіть надійний пароль') {
-
-        var passwordLength = 12;
-        var password = "";
-        
-        for (var i = 0; i <= passwordLength; i++) {
-            var randomNumber = Math.floor(Math.random() * chars.length);
-            password += chars.substring(randomNumber, randomNumber +1);
-        }
-
-        await ctx.reply('Твій пароль: ' + password)
+        await ctx.reply(`Твій пароль: ${randomPassword(11)}`)
     } else {
         console.log('Else')
-    }    
-
+    }
 });
 
 bot.start();
