@@ -1,11 +1,13 @@
-const { Bot, Keyboard } = require ('grammy');
+const { Bot, Keyboard} = require ('grammy');
 const { hydrateReply } = require('@grammyjs/parse-mode'); 
 const text = require('./text');
+const handlers = require('./handlers/hears')
 require('dotenv').config();
 
 const bot = new Bot(process.env.BOT_TOKEN);
 
 bot.use(hydrateReply);
+bot.use(handlers);
 
 bot.catch((error) => {
     const ctx = error.ctx;
@@ -15,7 +17,7 @@ bot.catch((error) => {
 const keyboard = new Keyboard()
   .text("🔓Створіть простий пароль").row()
   .text("🔒Створіть середній пароль").row()
-  .text("🔐Створіть надійний пароль")
+  .text("🔐Створіть надійний пароль") 
   .resized();
 
 bot.command('start', async (ctx) => {
@@ -24,42 +26,5 @@ bot.command('start', async (ctx) => {
         disable_web_page_preview: true,
     })
 });
-
-const chars = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-
-function randomPassword(passLength) {
-    var password = '';
-    for (var i = 0; i <= passLength; i++) {
-        const randomNumber = Math.floor(Math.random() * chars.length);
-        password += chars.substring(randomNumber, randomNumber +1);
-    }
-    return password
-};
-
-bot.hears('🔓Створіть простий пароль', async (ctx) =>{
-    await ctx.replyWithHTML(`Твій пароль: <code>${randomPassword(5)}</code>`)
-});
-
-bot.hears('🔒Створіть середній пароль', async (ctx) =>{
-    await ctx.replyWithHTML(`Твій пароль: <code>${randomPassword(8)}</code>`)
-});
-
-bot.hears('🔐Створіть надійний пароль', async (ctx) =>{
-    await ctx.replyWithHTML(`Твій пароль: <code>${randomPassword(12)}</code>`)
-});
-
-// bot.on('message:text', async (ctx) => {
-
-//     if (ctx.message.text == '🔓Створіть простий пароль') {
-//         await ctx.replyWithHTML(`Твій пароль: <code>${randomPassword(5)}</code>`)
-//     } else if (ctx.message.text == '🔒Створіть середній пароль') {
-//         await ctx.replyWithHTML(`Твій пароль: <code>${randomPassword(8)}</code>`)
-//     } else if (ctx.message.text == '🔐Створіть надійний пароль') {
-//         await ctx.replyWithHTML(`Твій пароль: <code>${randomPassword(11)}</code>`)
-//     } else {
-//         console.log('Else')
-//     }
-// });
-
 
 bot.start();
