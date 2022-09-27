@@ -1,4 +1,4 @@
-const { Bot, Keyboard} = require ('grammy');
+const { Bot, Keyboard } = require ('grammy');
 const { hydrateReply } = require('@grammyjs/parse-mode'); 
 const text = require('./text');
 const handlers = require('./handlers/hears')
