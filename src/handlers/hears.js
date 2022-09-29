@@ -1,5 +1,5 @@
 const { Composer } = require ('grammy');
-const handlers = new Composer()
+const handlers = new Composer();
 
 const chars = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
