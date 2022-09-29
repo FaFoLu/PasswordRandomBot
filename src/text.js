@@ -3,8 +3,9 @@ const textWelcome = `
 
 Цей бот допоможе вам згенерувати пароль. Просто виберіть одну з наступних кнопок:
 
-GitHub: github.com/FaFoLu/PasswordRandomBot
-Новини бота: @WildPiranha
+<b>GitHub:</b> github.com/FaFoLu/PasswordRandomBot
+<b>Новини бота:</b> @WildPiranha
+<b>Купити каву розробнику:</b> t.me/WildPiranha/100
 `
 
 module.exports.textWelcome = textWelcome;
