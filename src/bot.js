@@ -1,7 +1,7 @@
 const { Bot, Keyboard } = require ('grammy');
 const { hydrateReply } = require('@grammyjs/parse-mode'); 
 const text = require('./text');
-const handlers = require('./handlers/hears')
+const handlers = require('./handlers/hears');
 require('dotenv').config();
 
 const bot = new Bot(process.env.BOT_TOKEN);
@@ -27,4 +27,9 @@ bot.command('start', async (ctx) => {
     })
 });
 
-bot.start();
+bot.start({
+    onStart: async (botInfo) => {
+     console.log('Bot launched!')
+     console.log(botInfo)
+    }
+});
