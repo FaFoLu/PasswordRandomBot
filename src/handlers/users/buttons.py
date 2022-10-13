@@ -1,6 +1,5 @@
 from aiogram import types
 from loader import dp
-from src.keyboard import kb_menu
 
 @dp.message_handler(text='🔓Створіть простий пароль')
 async def buttons(message: types.Message):
