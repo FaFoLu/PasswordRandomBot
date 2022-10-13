@@ -6,5 +6,5 @@ load_dotenv()
 
 BOT_TOKEN = str(os.getenv("BOT_TOKEN"))
 
-ADMIN = 852524979
+ADMIN = 123456789 # Telegram User Id
 
