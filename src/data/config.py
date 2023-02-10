@@ -6,7 +6,7 @@ load_dotenv()
 
 BOT_TOKEN = str(os.getenv("BOT_TOKEN"))
 
-ADMIN = 123456789 # Telegram User Id
+ADMIN = 123456789 # Telegram UserId
 
 ip = os.getenv('ip')
 PostgresUser = str(os.getenv('PostgresUser'))
