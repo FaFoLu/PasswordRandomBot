@@ -1,5 +1,14 @@
 async def on_startup(dp):
 
+    from loader import db
+    from src.utils.dp_api.dp_gino import on_startup
+    print('Database connection')
+    await on_startup(dp)
+
+    print('Creation database')
+    await db.gino.create_all()
+    print('Done')
+
     from src.utils.notification_admin import on_startup_notify
     await on_startup_notify(dp)
 
