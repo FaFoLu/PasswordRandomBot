@@ -1,0 +1,179 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  user-select: none;    
+}
+
+body {
+  background: var(--tg-theme-bg-color, #333);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  min-height: 100vh;
+  margin-top: 20px;
+}
+
+/* Стилі для контейнера форми */
+.container {
+  width: 450px;
+	background: #0a0e31;
+  border-radius: 8px;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.45), 0 4px 8px rgba(0, 0, 0, 0.35), 0 8px 12px rgba(0, 0, 0, 0.15);
+  position: relative;
+}
+
+/* Зовнішня обгортка для всіх внутрішніх елементів */
+.wrapper {
+  margin: 1.25rem 1.75rem;
+}
+
+/* Поле вводу пароля та його обгортка */
+.wrapper .input-box {
+  position: relative;
+}
+
+/* Стилі для самого поля вводу пароля */
+.input-box input {
+  width: 100%;
+  height: 53px;
+  color: white;
+  background: none;
+  font-size: 1.06rem;
+  font-weight: 500;
+  border-radius: 4px;
+  letter-spacing: 1.4px;
+  border: 1px solid #aaa;
+  padding: 0 2.85rem 0 1rem;
+}
+
+/* Стилі для іконки copy_all */
+.input-box span {
+  position: absolute;
+  right: 13px;
+  cursor: pointer;
+  line-height: 53px;
+  color: #aaa;
+}
+
+/* Індикатор сили пароля */
+.wrapper .pass-indicator {
+  width: 100%;
+  height: 5px;
+  position: relative;
+  background: white; 
+  margin-top: 0.75rem;
+  border-radius: 25px;
+}
+
+/* Внутрішній елемент індикатора сили пароля */
+.pass-indicator::before {
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 50%;
+  border-radius: inherit;
+  transition: width 0.3s ease;
+}
+
+.pass-indicator#weak::before {
+  width: 20%;
+  background: #E64A4A; 
+}
+
+.pass-indicator#medium::before {
+  width: 50%;
+  background: #f1c80b; 
+}
+
+.pass-indicator#strong::before {
+  width: 100%;
+  background: #00C851;
+}
+
+/* Блок для Length */
+.wrapper .pass-length {
+  margin: 1.56rem 0 1.25rem;
+}
+
+/* Деталі вибору довжини пароля */
+.pass-length .details {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+}
+
+/* Length */
+.pass-length input {
+  width: 100%;
+  height: 5px;
+}
+
+.pass-settings .title {
+  color: white;
+}
+
+/* Налаштування Length */
+.pass-settings .options {
+  display: flex;
+  list-style: none;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.pass-settings .options .option {
+  display: flex; 
+  align-items: center; 
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+/* Текст для опцій */
+.options .option label {
+  cursor: pointer;
+  color: white;
+  padding-left: 0.65rem;
+  font-size: 18px;
+  flex: 1;
+}
+
+.wrapper .generate-btn {
+  width: 100%;
+  color: #fff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+	background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  font-size: 1.06rem;
+  padding: 0.94rem 0;
+  border-radius: 10px;
+  text-transform: uppercase;
+  margin: 0.94rem 0 1.3rem;
+  &:active {
+		transform: translateY(-3%);
+		box-shadow: 0 4px 8px rgba(255, 255, 255, 0.08);
+	}
+}
+
+/* Додаткові стилі для телефонів */
+@media (max-width: 600px) {
+  .container {
+    width: 90%; /* Зменшення ширини контейнера для телефонів */
+  }
+}
+
+/* Додаткові стилі для планшетів */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .container {
+    width: 70%; /* Зменшення ширини контейнера для планшетів */
+  }
+}
+
+/* Додаткові стилі для більших екранів */
+@media (min-width: 1025px) {
+  .container {
+    width: 450px; /* Відновлення ширини контейнера для більших екранів */
+  }
+}

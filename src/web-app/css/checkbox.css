@@ -1,0 +1,103 @@
+.checkbox .tgl {
+    display: none;
+}
+
+.checkbox .tgl,
+.checkbox .tgl:after,
+.checkbox .tgl:before,
+.checkbox .tgl *,
+.checkbox .tgl *:after,
+.checkbox .tgl *:before,
+.checkbox + .tgl-btn {
+ box-sizing: border-box;
+}
+
+.checkbox .tgl::-moz-selection,
+.checkbox .tgl:after::-moz-selection,
+.checkbox .tgl:before::-moz-selection,
+.checkbox .tgl *::-moz-selection,
+.checkbox .tgl *:after::-moz-selection,
+.checkbox .tgl *:before::-moz-selection,
+.checkbox .tgl + .tgl-btn::-moz-selection,
+.checkbox .tgl::selection,
+.checkbox .tgl:after::selection,
+.checkbox .tgl:before::selection,
+.checkbox .tgl *::selection,
+.checkbox .tgl *:after::selection,
+.checkbox .tgl *:before::selection,
+.checkbox .tgl + .tgl-btn::selection {
+background: none;
+}
+
+.checkbox .tgl + .tgl-btn {
+    outline: 0;
+    display: block;
+    width: 40px;
+    height: 20px;
+    position: relative;
+    cursor: pointer;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+}
+
+.checkbox .tgl + .tgl-btn:after,
+.checkbox .tgl + .tgl-btn:before {
+    position: relative;
+    display: block;
+    content: "";
+    width: 50%;
+    height: 100%;
+}
+
+.checkbox .tgl + .tgl-btn:after {
+    left: 0;
+}
+
+.checkbox .tgl + .tgl-btn:before {
+    display: none;
+}
+
+.checkbox .tgl:checked + .tgl-btn:after {
+    left: 50%;
+}
+
+.checkbox .tgl-ios + .tgl-btn {
+    background: grey;
+    border-radius: 2em;
+    padding: 2px;
+    transition: all 0.4s ease;
+    border: 1px solid #e8eae9;
+}
+
+.checkbox .tgl-ios + .tgl-btn:after {
+    border-radius: 2em;
+    background: #fbfbfb;
+    transition: left 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), padding 0.3s ease, margin 0.3s ease;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 4px 0 rgba(0, 0, 0, 0.08);
+}
+
+.checkbox .tgl-ios + .tgl-btn:hover:after {
+    will-change: padding;
+}
+
+.checkbox .tgl-ios + .tgl-btn:active {
+    box-shadow: inset 0 0 0 2em #e8eae9;
+}
+
+.checkbox .tgl-ios + .tgl-btn:active:after {
+    padding-right: 0.8em;
+}
+  
+.checkbox .tgl-ios:checked + .tgl-btn {
+    background: #86d993;
+}
+
+.checkbox .tgl-ios:checked + .tgl-btn:active {
+    box-shadow: none;
+}
+ 
+.checkbox .tgl-ios:checked + .tgl-btn:active:after {
+    margin-left: -0.8em;
+}

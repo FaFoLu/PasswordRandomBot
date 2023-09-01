@@ -1,0 +1,74 @@
+/* Стилі для кастомного range input */
+
+.custom-range {
+    -webkit-appearance: none; /* Відключає стандартний вигляд */
+    appearance: none;
+    width: 100%;
+    height: 10px;
+    border-radius: 5px;
+    background: blue;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+  
+/* Стилі для thumb в Webkit (Chrome, Safari) */
+.custom-range::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Відключає стандартний вигляд */
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: white;
+    cursor: pointer;
+}
+  
+/* Стилі для thumb в Firefox */
+.custom-range::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: white;
+    cursor: pointer;
+}
+  
+/* Стилі для thumb в Internet Explorer */
+.custom-range::-ms-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: white;
+    cursor: pointer;
+}
+  
+/* Зміна стилю thumb при наведенні в Webkit (Chrome, Safari) */
+.custom-range::-webkit-slider-thumb:hover {
+    background: white;
+}
+  
+/* Зміна стилю thumb при наведенні в Firefox */
+.custom-range::-moz-range-thumb:hover {
+    background: white;
+}
+  
+/* Зміна стилю thumb при наведенні в Internet Explorer */
+.custom-range::-ms-thumb:hover {
+    background: white;
+}
+  
+/* Зміна стилю thumb при натисканні в Webkit (Chrome, Safari) */
+.custom-range::-webkit-slider-thumb:active {
+    background: gray;
+}
+  
+/* Зміна стилю thumb при натисканні в Firefox */
+.custom-range::-moz-range-thumb:active {
+    background: gray;
+}
+  
+/* Зміна стилю thumb при натисканні в Internet Explorer */
+.custom-range::-ms-thumb:active {
+    background: gray;
+}
+  

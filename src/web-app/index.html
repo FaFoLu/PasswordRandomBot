@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/range.css">
+  <link rel="stylesheet" href="css/checkbox.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <script src="userTelegram.js"></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <div class="wrapper">
+      <div class="input-box">
+        <input type="text" disabled>
+        <span class="material-symbols-rounded">copy_all</span>
+      </div>
+      <div class="pass-indicator"></div>
+      <div class="pass-length">
+        <div class="details">
+          <label class="title">Length</label>
+          <span></span>
+        </div>
+        <input type="range" class="custom-range" min="4" max="20" value="8" step="1">
+      </div>
+      <div class="pass-settings">
+        <label class="title">Settings</label>
+        <ul class="options">
+          <li class="option">
+            <div class="checkbox">
+              <input class="tgl tgl-ios" id="lowercase" type="checkbox"/>
+              <label class="tgl-btn" for="lowercase"></label>
+            </div>
+            <label for="lowercase">Малі літери (a-z)</label>
+          </li>
+          <li class="option">
+            <div class="checkbox">
+              <input class="tgl tgl-ios" id="uppercase" type="checkbox"/>
+              <label class="tgl-btn" for="uppercase"></label>
+            </div>
+            <label for="uppercase">Великі літери (A-Z)</label>
+          </li>
+          <li class="option">
+            <div class="checkbox">
+              <input class="tgl tgl-ios" id="numbers" type="checkbox"/>
+              <label class="tgl-btn" for="numbers"></label>
+            </div>
+            <label for="numbers">Числа (0-9)</label>
+          </li>
+          <li class="option">
+            <div class="checkbox">
+              <input class="tgl tgl-ios" id="symbols" type="checkbox"/>
+              <label class="tgl-btn" for="symbols"></label>
+            </div>
+            <label for="symbols">Символи (!-$^+)</label>
+          </li>
+        </ul>
+      </div>
+      <button class="generate-btn">Generate Password</button>
+    </div>
+  </div>
+</body>
+</html>
